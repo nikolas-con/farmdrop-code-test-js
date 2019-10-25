@@ -1,0 +1,54 @@
+.variants-product-measurement{
+  padding: 5px 10px 10px 10px;
+  color: #B2B2B2;
+  margin: 0px;
+}
+.variants-price-per-unit {
+  font-size: 12px;
+  position: absolute; 
+  right: 0;
+  bottom: 45px;
+  margin: 5px
+}
+
+.variants-price{
+  font-size: 20px;
+  position: absolute;
+  left: 0;
+  bottom: 45px;
+  margin: 5px
+}
+.variants-drop-down-list {
+  background-color: #ECF1EB;
+  border: 0 solid;
+  padding: 4px;
+  margin: 5px;
+}
+
+.variants-price-seles {
+  font-size: 20px;
+  position: absolute;
+  left: 0;
+  bottom: 45px;
+  margin: 5px;
+  color: #d43535;
+}
+.variants-text-seles {
+  font-size: 12px;
+  position: absolute;
+  left: 0;
+  bottom: 95px;
+  margin: 5px;
+  color: #d43535;
+}
+
+.variants-price-seles-off {
+  font-size: 12px;
+  position: absolute;
+  left: 0;
+  bottom: 70px;
+  margin: 5px;
+  color: black;
+  text-decoration: line-through;
+}
+

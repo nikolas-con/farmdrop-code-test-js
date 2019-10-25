@@ -1,0 +1,33 @@
+@import '../../theme.scss';
+
+
+.header-bar{
+  top: 0px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: $primary;
+  padding: 10px;
+}
+.logo-icon {
+  width: 100px;
+  margin-left: 40px;
+}
+.basket-icon-container {
+  background-color: #ffffff;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+}
+.basket-icon {
+  margin: 5px;
+  width: 20px;
+  height: auto;
+}
+.basket-icon-text {
+  position: absolute;
+  color: #ffffff;
+}
