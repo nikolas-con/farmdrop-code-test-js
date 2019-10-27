@@ -1,8 +1,6 @@
 import React, {Fragment} from 'react';
 import './productVariants.scss'
-const DropDownList = (props) => {
 
-}
 const ProductSales = (props) => {
   if (props.variant.saleText === null && props.index === props.selectedVariantsValeu) {
     return (
@@ -33,16 +31,12 @@ const ProductVariants = (props) => {
         <p className="variants-product-measurement">{props.productMeasurement}</p>
         <p className="variants-price-per-unit">{props.productPricePerUnit}</p>
         <p className="variants-price">£{props.handlePrice(props.productPrice)}</p>
-        <div style={{}}>
-          <span></span>
-        </div>
       </Fragment>
     )
   } else if (props.variants.length > 0) {
     return (
       <Fragment>
-        <DropDownList></DropDownList>
-        <select onChange={props.handleSelectVariantsValue} className="variants-drop-down-list">
+        <select onChange={props.handleSelectVariantsValue}>
           {props.variants.map((variant, index) =>
             <option key={index} value={index}>{variant.measurement.displayName}</option>)}
         </select>

@@ -1,3 +1,4 @@
+
 .variants-product-measurement{
   padding: 5px 10px 10px 10px;
   color: #B2B2B2;
@@ -18,11 +19,41 @@
   bottom: 45px;
   margin: 5px
 }
-.variants-drop-down-list {
+// .variants-drop-down-list {
+
+// }
+select{
   background-color: #ECF1EB;
-  border: 0 solid;
-  padding: 4px;
+  border: 0px solid #ffffff;
   margin: 5px;
+  padding: 5px;
+  -webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	 -o-appearance: none;
+    appearance: none;
+    background-image: url('../../../support/icons/chevron.svg');
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+}
+// .variants-drop-down-list:after {
+//   content: '\f078';
+//   font: normal normal normal 17px/1 FontAwesome;
+//   color: #0ebeff;
+//   right: 11px;
+//   top: 6px;
+//   height: 34px;
+//   padding: 15px 0px 0px 8px;
+//   border-left: 1px solid #0ebeff;
+//   position: absolute;
+//   pointer-events: none;
+// }
+.variants-chevron {
+  height: 12px;
+  margin: 5px;
+  position: absolute;
+  right: 0px;
+  padding-right: 10px;
 }
 
 .variants-price-seles {

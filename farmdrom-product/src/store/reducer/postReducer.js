@@ -42,7 +42,6 @@ export default function (state = initialState, actions) {
             basket: newStateMinus
           }
         }
-      console.log('minus')
     default: 
       return state
   }

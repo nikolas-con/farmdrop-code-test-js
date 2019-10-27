@@ -8,7 +8,7 @@ import { addNewItemInOrder, plusQuantity, minusQuantity } from '../../../store/a
 
 const ProductCard = (props) => {
   const [product, setProduct] = useState({...props.product, selectedVariantsValeu: 0})
-
+  
   const handleSelectVariantsValue = (event) => {
     let  index = Number(event.target.value)
     console.log('naii', index)
@@ -41,7 +41,7 @@ const ProductCard = (props) => {
   }
   return ( 
     <div className="product-card">
-      <ProductImage productMedias={product.media} />
+      <ProductImage productMedias={product.media} productName={product.name} productTags={product.tags} basket={props.basket}  />
       <p className="product-name">{product.name}</p>
       <p className="product-producer-name">{product.producer.name}</p>
       <ProductVariants handleSelectVariantsValue={handleSelectVariantsValue} selectedVariantsValeu={product.selectedVariantsValeu} variants={product.variants} handlePrice={handlePrice} productMeasurement={product.measurement.displayName} productPrice={product.price.pence} productPricePerUnit={product.pricePerUnit} />
