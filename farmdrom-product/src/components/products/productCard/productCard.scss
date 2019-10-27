@@ -1,0 +1,23 @@
+@import '../../../theme.scss';
+.product-card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 5px;
+  height: 400px;
+  width: 200px;
+  outline: 1px solid #dbd5d5;
+}
+
+.product-name {
+  padding: 10px 10px 5px 10px;
+  color: black;
+  font-weight: bold;
+  margin: 0px;
+}
+.product-producer-name {
+  padding: 5px 10px 10px 10px;
+  color: $primary;
+  margin: 0px;
+
+}

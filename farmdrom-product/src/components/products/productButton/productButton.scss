@@ -1,0 +1,59 @@
+@import '../../../theme.scss';
+.rondom-box {
+  outline: 1px solid #dbd5d5;
+  bottom: 0;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  position: absolute;
+  margin: 5px;
+  left: 0;
+}
+.box-plus {
+  outline: 1px solid #dbd5d5;
+  bottom: 0;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  position: absolute;
+  margin: 5px;
+  right: 0px;
+  background-color: $grey;
+}
+.box-minus {
+  outline: 1px solid #dbd5d5;
+  bottom: 0;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  position: absolute;
+  margin: 5px;
+  right: 60px;
+  background-color: $grey;
+}
+
+.card-button {
+  bottom: 0;
+  text-align: center;
+  background: #00b495;
+  width: 100px;
+  height: 25px;
+  padding: 5px;
+  position: absolute;
+  margin: 5px;
+  right: 0px;
+  color: #ffffff;
+  font-size: 15px;
+}
+.basket-quantity-product {
+  bottom: 0;
+  right: 43px;
+  margin: 5px;
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  text-align: end;
+}
