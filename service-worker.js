@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/farmdrop-code-test-js/precache-manifest.13254ffba2e21a398f8a309efc3dd807.js"
+  "/farmdrop-code-test-js/precache-manifest.d6e85418ca4e9cd8f8402d90f9dd6f6a.js"
 );
 
 self.addEventListener('message', (event) => {
