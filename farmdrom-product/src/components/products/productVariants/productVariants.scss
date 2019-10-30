@@ -1,84 +1,81 @@
+@import '../../../theme.scss';
 
 .variants-product-measurement{
   padding: 5px 10px 10px 10px;
-  color: #B2B2B2;
+  color: $grey-font;
   margin: 0px;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 .variants-price-per-unit {
-  font-size: 12px;
+  font-size: 15px;
   position: absolute; 
   right: 0;
   bottom: 45px;
-  margin: 5px
+  margin: 15px;
 }
 
 .variants-price{
-  font-size: 20px;
+  font-size: 25px;
   position: absolute;
   left: 0;
   bottom: 45px;
-  margin: 5px
+  margin: 15px;
 }
-// .variants-drop-down-list {
-
-// }
 select{
-  background-color: #ECF1EB;
+  background-color: $back-grand-selector;
   border: 0px solid #ffffff;
-  margin: 5px;
-  padding: 5px;
+  color: $grey-font;
+  text-transform: uppercase;
+  margin: 15px;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 700;
   -webkit-appearance: none;
 	-moz-appearance: none;
 	-ms-appearance: none;
-	 -o-appearance: none;
-    appearance: none;
-    background-image: url('../../../support/icons/chevron.svg');
-    background-repeat: no-repeat, repeat;
-    background-position: right .7em top 50%, 0 0;
+  -o-appearance: none;
+  appearance: none;
+  padding-right: 55px;
+  text-overflow: ellipsis; // "..." apo css alla den doulefki
+  text-align: left; 
+  background-image: url('../../../support/icons/chevron.svg');
+  background-size: 15px 15px;
+  background-repeat: no-repeat, repeat;
+  background-position: right .7em top 50%, 0 0;
 }
-// .variants-drop-down-list:after {
-//   content: '\f078';
-//   font: normal normal normal 17px/1 FontAwesome;
-//   color: #0ebeff;
-//   right: 11px;
-//   top: 6px;
-//   height: 34px;
-//   padding: 15px 0px 0px 8px;
-//   border-left: 1px solid #0ebeff;
-//   position: absolute;
-//   pointer-events: none;
-// }
-.variants-chevron {
-  height: 12px;
-  margin: 5px;
-  position: absolute;
-  right: 0px;
-  padding-right: 10px;
+select:hover {
+  cursor: pointer;
 }
-
+.variants-opotions {
+  color: $grey-font;
+  font-size: 13px;
+  font-weight: 700;
+}
 .variants-price-seles {
   font-size: 20px;
   position: absolute;
   left: 0;
   bottom: 45px;
-  margin: 5px;
+  margin: 15px;
   color: #d43535;
 }
 .variants-text-seles {
-  font-size: 12px;
+  font-size: 15px;
   position: absolute;
   left: 0;
   bottom: 95px;
-  margin: 5px;
+  margin: 15px;
   color: #d43535;
 }
 
 .variants-price-seles-off {
-  font-size: 12px;
+  font-size: 15px;
   position: absolute;
   left: 0;
   bottom: 70px;
-  margin: 5px;
+  margin: 15px;
   color: black;
   text-decoration: line-through;
 }

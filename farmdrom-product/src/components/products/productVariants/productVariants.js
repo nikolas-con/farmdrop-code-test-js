@@ -38,7 +38,7 @@ const ProductVariants = (props) => {
       <Fragment>
         <select onChange={props.handleSelectVariantsValue}>
           {props.variants.map((variant, index) =>
-            <option key={index} value={index}>{variant.measurement.displayName}</option>)}
+            <option className="variants-opotions" key={index} value={index}>{variant.measurement.displayName}</option>)}
         </select>
         {props.variants.map((variant, index) =>
           <ProductSales handlePrice={props.handlePrice} index={index} variant={variant} selectedVariantsValeu={props.selectedVariantsValeu}/>)}

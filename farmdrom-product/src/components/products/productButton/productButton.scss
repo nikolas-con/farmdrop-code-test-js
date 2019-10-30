@@ -7,7 +7,7 @@
   height: 25px;
   padding: 5px;
   position: absolute;
-  margin: 5px;
+  margin: 15px;
   left: 0;
 }
 .box-plus {
@@ -18,7 +18,7 @@
   height: 25px;
   padding: 5px;
   position: absolute;
-  margin: 5px;
+  margin: 15px;
   right: 0px;
   background-color: $grey;
 }
@@ -34,7 +34,7 @@ a.box-plus:hover{
   height: 25px;
   padding: 5px;
   position: absolute;
-  margin: 5px;
+  margin: 15px;
   right: 60px;
   background-color: $grey;
 }
@@ -46,14 +46,14 @@ a.box-minus:hover{
   bottom: 0;
   text-align: center;
   background: #00b495;
-  width: 100px;
+  width: 70%;
   height: 25px;
   padding: 5px;
   position: absolute;
-  margin: 5px;
   right: 0px;
   color: #ffffff;
   font-size: 15px;
+  margin: 15px;
 }
 a.card-button:hover{
   cursor: pointer;
@@ -61,9 +61,9 @@ a.card-button:hover{
 }
 
 .basket-quantity-product {
-  bottom: 0;
+  bottom: 5px;
   right: 43px;
-  margin: 5px;
+  margin: 15px;
   position: absolute;
   height: 25px;
   width: 25px;
