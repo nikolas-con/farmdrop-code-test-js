@@ -1,5 +1,6 @@
 import { ADD_ITEM_IN_BASKET, FETCH_POST, PLUS_QUANTITY, MINUS_QUANTITY } from './types'
 // import Products from '../../support/data/products'
+import axios from 'axios';
 // import Products from '../../support/data/products'
 
 
@@ -46,20 +47,21 @@ const query = `
     }
   }
 }`;
-const opts = {
-  method: "POST",
+const url = "https://staging-graphql-gateway.farmdrop.com/graphql" 
+const postParam = {
+  method: 'post',
+  url: url,
   headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ query })
-};
+  data: { query }
+}
 export function fetchPost () {
   return function (dispatch) {
-    fetch("https://staging-graphql-gateway.farmdrop.com/graphql", opts)
-      .then(res => res.json())
-      .then(post => 
-        dispatch({
-          type: FETCH_POST,
-          products: post.data.productSearch.nodes
-        }))
+    console.log('1')
+    axios(postParam)
+      .then(res => dispatch({
+        type: FETCH_POST,
+        products: res.data.data.productSearch.nodes
+      }))
       .catch(console.error);
   }
 }

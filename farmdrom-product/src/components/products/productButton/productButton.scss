@@ -22,6 +22,10 @@
   right: 0px;
   background-color: $grey;
 }
+a.box-plus:hover{
+  cursor: pointer;
+}
+
 .box-minus {
   outline: 1px solid #dbd5d5;
   bottom: 0;
@@ -33,6 +37,9 @@
   margin: 5px;
   right: 60px;
   background-color: $grey;
+}
+a.box-minus:hover{
+  cursor: pointer;
 }
 
 .card-button {
@@ -48,6 +55,11 @@
   color: #ffffff;
   font-size: 15px;
 }
+a.card-button:hover{
+  cursor: pointer;
+  background: rgb(0, 158, 130);
+}
+
 .basket-quantity-product {
   bottom: 0;
   right: 43px;

@@ -18,9 +18,7 @@ const ProductButton = (props) => {
     return(
       <Fragment>
         <p className="rondom-box"/>
-        <a onClick={() => props.submitInOrder(product)}>
-          <p className="card-button">Add</p>
-        </a>
+        <a className="card-button" onClick={() => props.submitInOrder(product)}> Add </a>
       </Fragment>
     );
   } else if (basketFilter === true) {
