@@ -22,7 +22,7 @@ export default function (state = initialState, actions) {
     case PLUS_QUANTITY:
       const newStatePlus = [...state.basket]
       newStatePlus[actions.indexBasket].quantity ++
-      console.log('plus', newStatePlus)
+      console.log('plus', actions.indexBasket)
       return {
         ...state,
         basket: newStatePlus
@@ -30,9 +30,13 @@ export default function (state = initialState, actions) {
     case MINUS_QUANTITY:
         let newStateMinus = [...state.basket]
         if (newStateMinus[actions.indexBasket].quantity === 1) {
+          console.log('minus',actions.indexBasket)
+          console.log(newStateMinus)
+          newStateMinus.splice(actions.indexBasket)
+          console.log(newStateMinus)
           return  {
             ...state,
-            basket: newStateMinus.splice(actions.indexBasket,actions.indexBasket)
+            basket: newStateMinus
           }
         }
         if (newStateMinus[actions.indexBasket].quantity > 0) {

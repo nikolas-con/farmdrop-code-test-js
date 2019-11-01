@@ -7,12 +7,13 @@ import { connect } from 'react-redux'
 import { addNewItemInOrder, plusQuantity, minusQuantity } from '../../../store/actions/dataActions'
 
 const ProductCard = (props) => {
-  const [product, setProduct] = useState({...props.product, selectedVariantsValeu: 0})
+  const [product, setProduct] = useState({...props.product, selectedVariantsValeu: null, selectedDefault: true})
   
   const handleSelectVariantsValue = (event) => {
-    let  index = Number(event.target.value)
-    console.log('naii', index)
-    setProduct({...product, selectedVariantsValeu: Number(event.target.value)})
+    console.log(event.target.value)
+    console.log(product.name)
+    if (event.target.value !== product.measurement.displayName) setProduct({...product, selectedVariantsValeu: Number(event.target.value), selectedDefault: false})
+    if (event.target.value === product.measurement.displayName) setProduct({...product, selectedVariantsValeu: null, selectedDefault: true})
   }
 
   const handlePrice = price => {
@@ -44,8 +45,8 @@ const ProductCard = (props) => {
       <ProductImage productMedias={product.media} productName={product.name} productTags={product.tags} basket={props.basket}  />
       <p className="product-name">{product.name}</p>
       <p className="product-producer-name">{product.producer.name}</p>
-      <ProductVariants handleSelectVariantsValue={handleSelectVariantsValue} selectedVariantsValeu={product.selectedVariantsValeu} variants={product.variants} handlePrice={handlePrice} productMeasurement={product.measurement.displayName} productPrice={product.price.pence} productPricePerUnit={product.pricePerUnit} />
-      <ProductButton handleMinusQunttie={handleMinusQunttie} handlePlusQunttie={handlePlusQunttie} product={product} submitInOrder={submitInOrder} basket={props.basket}/>
+      <ProductVariants handleSelectVariantsValue={handleSelectVariantsValue} selectedDefault={product.selectedDefault} saleText={product.saleText} salePrice={product.salePrice} selectedVariantsValeu={product.selectedVariantsValeu} variants={product.variants} handlePrice={handlePrice} productMeasurement={product.measurement.displayName} productPrice={product.price.pence} productPricePerUnit={product.pricePerUnit} />
+      <ProductButton handleMinusQunttie={handleMinusQunttie}  handlePlusQunttie={handlePlusQunttie} product={product} submitInOrder={submitInOrder} basket={props.basket}/>
     </div> 
   );
 }
