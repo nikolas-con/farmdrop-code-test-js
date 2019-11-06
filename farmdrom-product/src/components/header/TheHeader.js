@@ -6,7 +6,7 @@ import './TheHeader.scss'
 const TheHeader = (props) => {
   return (
     <Fragment>
-      <div className="header-bar">
+      <div data-test="header-bar" className="header-bar" >
         <img className="logo-icon" src={LogoIcon}/>
       </div>
       <div style={{textAlign: 'end'}}>
