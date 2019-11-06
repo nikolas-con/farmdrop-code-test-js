@@ -5,7 +5,7 @@ import TheProductGrind from '../src/components/productGrind/TheProductGrind'
 import { Provider } from 'react-redux'
 import store from './store/store'
 
-function App() {
+const App = () => {
   return (
     <Provider store={store}>
       <TheHeader/>

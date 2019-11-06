@@ -4,18 +4,16 @@ import './TheProductGrind.scss'
 import { connect } from 'react-redux'
 import { fetchPost } from '../../store/actions/dataActions'
 
-
-
 const TheProductGrind = (props) => {
-  useEffect ( ()=>{
+
+  useEffect (()=>{
     props.fetchPost()
   });
+
   return (
-    <div data-tets="product-grind" className="product-grind">
-      {props.products.map(product => 
-        <ProductCard data-test="product-card" key={product.name} basket={props.basket} product={product}/>
-        )}
-    </div>
+      <ul data-tets="product-grind" className="product-grind">
+        {props.products.map(product => <ProductCard data-test="product-card" key={product.name} basket={props.basket} product={product}/>)}
+      </ul>
   );
 }
 const mapStateToProps = state => ({
