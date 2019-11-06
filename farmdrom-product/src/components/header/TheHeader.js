@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect  } from 'react';
+import { connect } from 'react-redux'
 import BasketIcon from '../../support/icons/basket.svg'
 import LogoIcon from '../../support/icons/logo_farmdrop.png'
 import './TheHeader.scss'
@@ -18,5 +19,8 @@ const TheHeader = (props) => {
     </Fragment>
    );
 }
+const mapStateToProps = state => ({
+  basket: state.post.basket
+})
 
-export default TheHeader;
+export default connect(mapStateToProps, {})(TheHeader);

@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ProductCard from '../products/productCard/productCard'
 import './TheProductGrind.scss'
 import { connect } from 'react-redux'
+import { fetchPost } from '../../store/actions/dataActions'
+
 
 
 const TheProductGrind = (props) => {
+  useEffect ( ()=>{
+    props.fetchPost()
+  });
   return (
-    <div className="product-grind">
+    <div data-tets="product-grind" className="product-grind">
       {props.products.map(product => 
-        <ProductCard product={product} basket={props.basket}/>
+        <ProductCard data-test="product-card" key={product.name} basket={props.basket} product={product}/>
         )}
     </div>
   );
@@ -18,4 +23,4 @@ const mapStateToProps = state => ({
   basket: state.post.basket
 })
 
-export default connect(mapStateToProps, {})(TheProductGrind);
+export default connect(mapStateToProps, { fetchPost })(TheProductGrind);
