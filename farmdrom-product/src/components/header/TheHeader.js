@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect  } from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux'
 import BasketIcon from '../../support/icons/basket.svg'
 import LogoIcon from '../../support/icons/logo_farmdrop.png'

@@ -40,13 +40,17 @@ const ProductCard = (props) => {
   const handleMinusQunttie = index => {
     props.minusQuantity(index)
   }
+  const configProductImage = { productMedias : product.media, productName:product.name, productTags:product.tags, basket:props.basket }
+  const configProductVariants = { handleSelectVariantsValue : handleSelectVariantsValue, selectedDefault : product.selectedDefault,saleText : product.saleText, salePrice : product.salePrice, selectedVariantsValeu : product.selectedVariantsValeu, variants : product.variants, handlePrice : handlePrice, productMeasurement : product.measurement.displayName, productPrice : product.price.pence, productPricePerUnit : product.pricePerUnit }
+  const configProductButon = { handleMinusQunttie : handleMinusQunttie , handlePlusQunttie : handlePlusQunttie, product :product, submitInOrder : submitInOrder, basket : props.basket }
+  
   return ( 
     <div className="product-card">
-      <ProductImage productMedias={product.media} productName={product.name} productTags={product.tags} basket={props.basket}  />
+      <ProductImage {...configProductImage}/>
       <p className="product-name">{product.name}</p>
       <p className="product-producer-name">{product.producer.name}</p>
-      <ProductVariants handleSelectVariantsValue={handleSelectVariantsValue} selectedDefault={product.selectedDefault} saleText={product.saleText} salePrice={product.salePrice} selectedVariantsValeu={product.selectedVariantsValeu} variants={product.variants} handlePrice={handlePrice} productMeasurement={product.measurement.displayName} productPrice={product.price.pence} productPricePerUnit={product.pricePerUnit} />
-      <ProductButton handleMinusQunttie={handleMinusQunttie}  handlePlusQunttie={handlePlusQunttie} product={product} submitInOrder={submitInOrder} basket={props.basket}/>
+      <ProductVariants {...configProductVariants} />
+      <ProductButton{...configProductButon}/>
     </div> 
   );
 }

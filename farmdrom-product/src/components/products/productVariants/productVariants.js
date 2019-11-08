@@ -52,6 +52,7 @@ const ProductVariants = (props) => {
       </Fragment>
     )
   } else if (props.variants.length > 0) {
+    const configProductSeles = { handlePrice : props.handlePrice, selectedDefault : props.selectedDefault, saleText : props.saleText, salePrice : props.salePrice, productMeasurement : props.productMeasurement, productPrice : props.productPrice, productPricePerUnit : props.productPricePerUnit, selectedVariantsValeu : props.selectedVariantsValeu }
     return (
       <Fragment>
         {/* <div className="select-conten"> */}
@@ -62,7 +63,7 @@ const ProductVariants = (props) => {
           </select>
         {/* </div> */}
         {props.variants.map((variant, index) =>
-          <ProductSales handlePrice={props.handlePrice} selectedDefault={props.selectedDefault} saleText={props.saleText}  salePrice={props.salePrice} productMeasurement={props.productMeasurement} productPrice={props.productPrice} productPricePerUnit={props.productPricePerUnit} index={index} variant={variant} selectedVariantsValeu={props.selectedVariantsValeu}/>)}
+          <ProductSales {...configProductSeles} index={index} variant={variant}/>)}
       </Fragment>
     );
 

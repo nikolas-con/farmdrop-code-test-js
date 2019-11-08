@@ -7,8 +7,9 @@ import { fetchPost } from '../../store/actions/dataActions'
 const TheProductGrind = (props) => {
 
   useEffect (()=>{
+    console.log('useEffect')
     props.fetchPost()
-  });
+  },[]);
 
   return (
       <ul data-tets="product-grind" className="product-grind">
