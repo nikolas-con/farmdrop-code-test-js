@@ -18,16 +18,16 @@ const ProductButton = (props) => {
     return(
       <Fragment>
         <p className="rondom-box"/>
-        <a className="card-button" onClick={() => props.submitInOrder(product)}> Add </a>
+        <a data-test="btn-add-basket" className="card-button" onClick={() => props.submitInOrder(product)}> Add </a>
       </Fragment>
     );
   } else if (basketFilter === true) {
     return (
       <Fragment>
         <a className="rondom-box"/>
-        <a className="box-minus" onClick={()=>props.handleMinusQunttie(basketIndex)}><img src={minusIcon}/></a>
-        <span className="basket-quantity-product">{basket[basketIndex].quantity}</span>
-        <a className="box-plus" onClick={()=>props.handlePlusQunttie(basketIndex)}><img src={plusIcon}/></a>
+        <a data-test="btn-minus" className="box-minus" onClick={()=>props.handleMinusQunttie(basketIndex)}><img src={minusIcon}/></a>
+        <span data-test="txt-basket-quantity-product"  className="basket-quantity-product">{basket[basketIndex].quantity}</span>
+        <a data-test="btn-plus" className="box-plus" onClick={()=>props.handlePlusQunttie(basketIndex)}><img src={plusIcon}/></a>
       </Fragment>
     )
   }
