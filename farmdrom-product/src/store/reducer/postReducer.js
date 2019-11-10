@@ -5,7 +5,7 @@ const initialState = {
   basket: []
 }
 
-export default function (state = initialState, actions) {
+export function postReducer (state = initialState, actions) {
   switch (actions.type) {
     case FETCH_POST:
       console.log('reducer post')

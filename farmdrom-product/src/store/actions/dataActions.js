@@ -1,8 +1,5 @@
 import { ADD_ITEM_IN_BASKET, FETCH_POST, PLUS_QUANTITY, MINUS_QUANTITY } from './types'
-// import Products from '../../support/data/products'
 import axios from 'axios';
-// import Products from '../../support/data/products'
-
 
 const query = `
 {

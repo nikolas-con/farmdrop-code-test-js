@@ -4,22 +4,26 @@ import './TheProductGrind.scss'
 import { connect } from 'react-redux'
 import { fetchPost } from '../../store/actions/dataActions'
 
+const mapDispatchToProps = dispatch => ({ 
+  fetchPost: () => dispatch(fetchPost())
+})
+const mapStateToProps = state => ({
+  products: state.products,
+  basket: state.basket
+})
+
 const TheProductGrind = (props) => {
 
   useEffect (()=>{
-    console.log('useEffect')
     props.fetchPost()
-  },[]);
+  },[props.fetchPost]);
 
   return (
-      <ul data-tets="product-grind" className="product-grind">
-        {props.products.map(product => <ProductCard data-test="product-card" key={product.name} basket={props.basket} product={product}/>)}
+      <ul data-test="list-product-grind" className="product-grind">
+        {props.products.map(product => <ProductCard key={product.name} basket={props.basket} product={product}/>)}
       </ul>
   );
 }
-const mapStateToProps = state => ({
-  products: state.post.products,
-  basket: state.post.basket
-})
 
-export default connect(mapStateToProps, { fetchPost })(TheProductGrind);
+
+export default connect(mapStateToProps, mapDispatchToProps)(TheProductGrind);

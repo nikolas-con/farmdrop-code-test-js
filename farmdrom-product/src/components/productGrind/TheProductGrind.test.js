@@ -1,23 +1,29 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import TheProductGrind from './TheProductGrind'
-// import { findByTestAtrr } from '../../support/testUtility'
 
-const setUp = (props={}) => {
-  const component = shallow(<TheProductGrind {...props} />);
-  return component;
-};
+import configureStore from 'redux-mock-store'
+import mockData from '../../support/mock/mockData'
+import { Provider } from 'react-redux'
 
-describe('Product grind UI', () => {
+import thunk from 'redux-thunk'
+const mockStore = configureStore([thunk])
 
-  let component
-  beforeEach( ()=>{
-    component =setUp()
-  });
-  it('check grid children count if data are fetched', () => {
-    let store = mockStore({products: mockProducts, basketProducts: []})
-    let wrapper = enzyme.mount(<Provider store={store}><TheProductGrind /></Provider>)
-    
-    expect(wrapper.find('[data-testid="lst-products-grid"]').children().length).toBe(21)
+const mockProducts = mockData.data.productSearch.nodes
+console.log(mockProducts.length)
+
+describe('renders TheProductGrind', ()=>{
+  it('ckeck <TheProdutcGrind/> if are data fetched', ()=>{
+    const store = mockStore({products: mockProducts, basket: []})
+    const warper = mount(<Provider store={store}><TheProductGrind/></Provider>)
+    // console.log(warper.debug())
+    expect(warper.find(`[data-test='list-product-grind']`).children().length).toBe(23)
   })
-});
+
+  it('ckeck <TheProdutcGrind/> if are not data fetched', ()=>{
+    const store = mockStore({products: [], basket: []})
+    const warper = mount(<Provider store={store}><TheProductGrind/></Provider>)
+    // console.log(warper.debug())
+    expect(warper.find(`[data-test='list-product-grind']`).children().length).toBe(0)
+  })
+})

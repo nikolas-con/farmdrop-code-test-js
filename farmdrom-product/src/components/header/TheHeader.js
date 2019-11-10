@@ -20,7 +20,7 @@ const TheHeader = (props) => {
    );
 }
 const mapStateToProps = state => ({
-  basket: state.post.basket
+  basket: state.basket
 })
 
 export default connect(mapStateToProps, {})(TheHeader);

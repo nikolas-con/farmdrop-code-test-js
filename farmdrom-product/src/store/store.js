@@ -1,14 +1,11 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
-import rootReducer from './reducer'
-
-const initialState = {}
+import { postReducer } from './reducer/postReducer'
 
 const middlweare = [thunk]
 
 const store = createStore(
-  rootReducer,
-  initialState,
+  postReducer,
   compose(
     applyMiddleware(...middlweare),
     window.navigator.userAgent.includes('Chrome') ?

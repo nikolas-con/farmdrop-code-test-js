@@ -55,15 +55,15 @@ const ProductVariants = (props) => {
     const configProductSeles = { handlePrice : props.handlePrice, selectedDefault : props.selectedDefault, saleText : props.saleText, salePrice : props.salePrice, productMeasurement : props.productMeasurement, productPrice : props.productPrice, productPricePerUnit : props.productPricePerUnit, selectedVariantsValeu : props.selectedVariantsValeu }
     return (
       <Fragment>
-        {/* <div className="select-conten"> */}
-          <select onChange={props.handleSelectVariantsValue}>
-            <option value={props.productMeasurement}>{props.productMeasurement}</option>
-            {props.variants.map((variant, index) =>
-              <option className="variants-opotions" key={index} value={index}>{variant.measurement.displayName}</option>)}
-          </select>
-        {/* </div> */}
-        {props.variants.map((variant, index) =>
-          <ProductSales {...configProductSeles} index={index} variant={variant}/>)}
+        <select onChange={props.handleSelectVariantsValue}>
+          <option value={props.productMeasurement}>{props.productMeasurement}</option>
+          {props.variants.map((variant, index) =>
+            <option className="variants-opotions" key={index} value={index}>{variant.measurement.displayName}</option>)}
+        </select>
+        <ul>
+          {props.variants.map((variant, index) =>
+            <ProductSales {...configProductSeles} index={index} variant={variant}/>)}
+        </ul>
       </Fragment>
     );
 

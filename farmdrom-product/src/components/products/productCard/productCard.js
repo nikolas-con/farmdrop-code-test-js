@@ -45,12 +45,12 @@ const ProductCard = (props) => {
   const configProductButon = { handleMinusQunttie : handleMinusQunttie , handlePlusQunttie : handlePlusQunttie, product :product, submitInOrder : submitInOrder, basket : props.basket }
   
   return ( 
-    <div className="product-card">
+    <div data-test="product-card" className="product-card">
       <ProductImage {...configProductImage}/>
-      <p className="product-name">{product.name}</p>
-      <p className="product-producer-name">{product.producer.name}</p>
+      <p data-test="txt-product-name" className="product-name">{product.name}</p>
+      <p data-test="txt-producer-name" className="product-producer-name">{product.producer.name}</p>
       <ProductVariants {...configProductVariants} />
-      <ProductButton{...configProductButon}/>
+      <ProductButton {...configProductButon}/>
     </div> 
   );
 }
