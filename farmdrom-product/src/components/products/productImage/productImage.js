@@ -19,22 +19,22 @@ const ProductImage = (props) => {
     return (
       <Fragment>
         {medias.map(media => 
-          media.position === 1 ? <img className="card-image" src={media.url} alt=""/> : ''
+          media.position === 1 ? <img data-test="img-product" className="card-image" src={media.url} alt=""/> : ''
         )}
     </Fragment>
     )
   } else if (tags.length > 0 && !basketFilter) {
     return (
       <Fragment>
-        {medias.map(media => media.position === 1 ? <img className="card-image" src={media.url} alt=""/>  : '')}
-        {tags.map(tag => <p className="product-tags">{tag.name}</p>)}
+        {medias.map(media => media.position === 1 ? <img data-test="img-product" className="card-image" src={media.url} alt=""/>  : '')}
+        {tags.map(tag => <p data-test="txt-product-tag" className="product-tags">{tag.name}</p>)}
       </Fragment>
     )   
   } else if (basketFilter) {
     return (
       <Fragment>
-        {medias.map(media => media.position === 1 ? <img className="card-image" src={media.url} alt=""/>  : '')}
-        <p className="basket-image"><span style={{position: 'absolute', top: '40%', left: '32%'}}>{basket[basketIndex].quantity} in basket</span></p>
+        {medias.map(media => media.position === 1 ? <img data-test="img-product" className="card-image" src={media.url} alt=""/>  : '')}
+        <p data-test="basket-image" className="basket-image"><span data-test="txt-bakset-quantity" style={{position: 'absolute', top: '40%', left: '32%'}}>{basket[basketIndex].quantity} in basket</span></p>
       </Fragment>
       )
   }
