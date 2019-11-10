@@ -1,26 +1,22 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import TheHeader from './TheHeader';
-import { findByTestAtrr } from '../../support/testUtility'
 
-const attr = ['header-bar', 'img-logo', 'con-basket', 'img-basket-icon'] // 'text-basket'
-const setUp = (props={}) => {
-  const component = shallow(<TheHeader {...props} />);
-  return component;
-};
+import configureStore from 'redux-mock-store'
+import mockData from '../../support/mock/mockData'
+import { Provider } from 'react-redux'
 
-describe('Header componet',() => {
-  let component
-  beforeEach(()=> {
-    const props ={
-      basket: 'test basket' 
-    }
-    component = setUp(props); 
-  })
-  attr.forEach(attr => {
-    it(`Should render without errors ${attr}`, () => {
-      const wrapper =findByTestAtrr(component, attr)
-      expect(wrapper.length).toBe(1);
-    });
+import thunk from 'redux-thunk'
+const mockStore = configureStore([thunk])
+
+const mockProducts = mockData.data.productSearch.nodes
+// nomizo theli kai alla test alla tr na doume
+describe('renders <TheHeader/> componet',() => {
+  it('Should render without errors', () => {
+    const store = mockStore({products: mockProducts, basket: []})
+    const warper = mount(<Provider store={store}><TheHeader/></Provider>)
+    expect(warper.find(`[data-test='img-logo']`).length).toBe(1)
+    expect(warper.find(`[data-test='img-basket-icon']`).length).toBe(1)
+    expect(warper.find(`[data-test='txt-basket']`).text()).toBe('0')
   });
 });

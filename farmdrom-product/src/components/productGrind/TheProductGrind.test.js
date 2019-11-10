@@ -10,7 +10,7 @@ import thunk from 'redux-thunk'
 const mockStore = configureStore([thunk])
 
 const mockProducts = mockData.data.productSearch.nodes
-console.log(mockProducts.length)
+
 
 describe('renders TheProductGrind', ()=>{
   it('ckeck <TheProdutcGrind/> if are data fetched', ()=>{
