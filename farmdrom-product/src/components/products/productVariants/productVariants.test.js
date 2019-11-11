@@ -4,7 +4,7 @@ import ProductVariants from './productVariants'
 
 import mockData from '../../../support/mock/mockData'
 const mockProduct = mockData.data.productSearch.nodes[0]
-
+// *** kati theli akoma alla enksero akoma S
 describe('renders TheProductGrind', ()=>{
   it('no variants', ()=>{
     const handlePrice = price =>{

@@ -16,7 +16,7 @@ const ProductVariants = (props) => {
     return (
       <Fragment>
         <select onChange={props.handleSelectVariantsValue}>
-          <option value={props.productMeasurement}>{props.productMeasurement}</option>
+          <option className="variants-opotions" value={props.productMeasurement}>{props.productMeasurement}</option>
           {props.variants.map((variant, index) =>
             <option className="variants-opotions" key={index} value={index}>{variant.measurement.displayName}</option>)}
         </select>
