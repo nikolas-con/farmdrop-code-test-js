@@ -1,0 +1,41 @@
+.price-per-unit {
+  font-size: 15px;
+  position: absolute; 
+  right: 0;
+  bottom: 45px;
+  margin: 15px;
+}
+
+.price-default {
+  font-size: 25px;
+  position: absolute;
+  left: 0;
+  bottom: 45px;
+  margin: 15px;
+}
+.price-seles {
+  font-size: 20px;
+  position: absolute;
+  left: 0;
+  bottom: 45px;
+  margin: 15px;
+  color: #d43535;
+}
+.text-seles {
+  font-size: 15px;
+  position: absolute;
+  left: 0;
+  bottom: 95px;
+  margin: 15px;
+  color: #d43535;
+}
+
+.price-seles-off {
+  font-size: 15px;
+  position: absolute;
+  left: 0;
+  bottom: 70px;
+  margin: 15px;
+  color: black;
+  text-decoration: line-through;
+}
