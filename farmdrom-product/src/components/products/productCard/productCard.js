@@ -7,7 +7,11 @@ import { connect } from 'react-redux'
 import { addNewItemInOrder, plusQuantity, minusQuantity } from '../../../store/actions/dataActions'
 
 const ProductCard = (props) => {
+
   const [product, setProduct] = useState({...props.product, selectedVariantsValeu: null, selectedDefault: true})
+
+  let basketFilter =  props.basket.some(items => {return items.name === product.name})
+  let basketIndex = props.basket.findIndex(items => { return items.name === product.name })
   
   const handleSelectVariantsValue = (event) => {
     console.log(event.target.value)
@@ -20,29 +24,10 @@ const ProductCard = (props) => {
     let pounds = price/100
     return pounds.toFixed(2)
   }
-  const submitInOrder = (data) => {
-    console.log('1', data)
-    if (data.variants.length === 0) {
-
-      data.quantity = 1
-      props.addNewItemInOrder({...data, quantity:1})
-      console.log('2')
-    } 
-    if (data.variants.length > 0) {
-      console.log('3')
-      console.log(data)
-      props.addNewItemInOrder({...data, quantity: 1})
-    }
-  }
-  const handlePlusQunttie = index => {
-    props.plusQuantity(index)
-  }
-  const handleMinusQunttie = index => {
-    props.minusQuantity(index)
-  }
-  const configProductImage = { productMedias : product.media, productName:product.name, productTags:product.tags, basket:props.basket }
+ 
+  const configProductImage = { basketFilter: basketFilter, basketIndex: basketIndex, productMedias : product.media, productName:product.name, productTags:product.tags, basket:props.basket }
   const configProductVariants = { handleSelectVariantsValue : handleSelectVariantsValue, selectedDefault : product.selectedDefault,saleText : product.saleText, salePrice : product.salePrice, selectedVariantsValeu : product.selectedVariantsValeu, variants : product.variants, handlePrice : handlePrice, productMeasurement : product.measurement.displayName, productPrice : product.price.pence, productPricePerUnit : product.pricePerUnit }
-  const configProductButon = { handleMinusQunttie : handleMinusQunttie , handlePlusQunttie : handlePlusQunttie, product :product, submitInOrder : submitInOrder, basket : props.basket }
+  const configProductButon = { basketFilter: basketFilter, basketIndex: basketIndex, handleMinusQunttie : props.minusQuantity, handlePlusQunttie : props.plusQuantity, product :product, submitInOrder: props.addNewItemInOrder, basket : props.basket }
   
   return ( 
     <div data-test="product-card" className="product-card">
@@ -54,5 +39,12 @@ const ProductCard = (props) => {
     </div> 
   );
 }
-
-export default connect(null, {addNewItemInOrder, plusQuantity, minusQuantity})(ProductCard);
+const mapDispatchToProps = dispatch => ({ 
+  addNewItemInOrder: (data) => dispatch(addNewItemInOrder({...data, quantity:1})),
+  plusQuantity: (index) => dispatch(plusQuantity(index)),
+  minusQuantity: (index) => dispatch(minusQuantity(index))
+})
+const mapStateToProps = state => ({
+  basket: state.basket
+})
+export default connect(mapStateToProps, mapDispatchToProps)(ProductCard);

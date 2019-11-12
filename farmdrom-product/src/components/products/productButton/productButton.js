@@ -5,16 +5,11 @@ import './productButton.scss'
 const ProductButton = (props) => {
   const basket = props.basket
   const product = props.product
-
-  let basketFilter =  basket.some(items => {
-    return items.name === product.name
-  })
-  let basketIndex = basket.findIndex(items => {
-    return items.name === product.name
-  })
-  
+  const basketIndex = props.basketIndex
+  const basketFilter = props.basketFilter
 
   if ( basketFilter === false) {
+    console.log('no in basket', basketIndex )
     return(
       <Fragment>
         <p className="rondom-box"/>
@@ -22,6 +17,7 @@ const ProductButton = (props) => {
       </Fragment>
     );
   } else if (basketFilter === true) {
+    console.log('in basket')
     return (
       <Fragment>
         <a className="rondom-box"/>

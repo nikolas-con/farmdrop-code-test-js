@@ -15,8 +15,13 @@ describe('renders <TheHeader/> componet',() => {
   it('Should render without errors', () => {
     const store = mockStore({products: mockProducts, basket: []})
     const warper = mount(<Provider store={store}><TheHeader/></Provider>)
-    expect(warper.find(`[data-test='img-logo']`).length).toBe(1)
-    expect(warper.find(`[data-test='img-basket-icon']`).length).toBe(1)
+    expect(warper.find(`[data-test='img-logo']`).exists()).toBe(true)
+    expect(warper.find(`[data-test='img-basket-icon']`).exists()).toBe(true)
     expect(warper.find(`[data-test='txt-basket']`).text()).toBe('0')
+  });
+  it('Should render add items from basket', () => {
+    const store = mockStore({products: mockProducts, basket: [mockProducts[0], mockProducts[2] ]})
+    const warper = mount(<Provider store={store}><TheHeader/></Provider>)
+    expect(warper.find(`[data-test='txt-basket']`).text()).toBe('2')
   });
 });

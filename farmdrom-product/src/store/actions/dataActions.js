@@ -51,40 +51,28 @@ const postParam = {
   headers: { "Content-Type": "application/json" },
   data: { query }
 }
-export function fetchPost () {
-  return function (dispatch) {
+export const fetchPost = () =>{
+  return async (dispatch) => {
     console.log('1')
-    axios(postParam)
-      .then(res => dispatch({
-        type: FETCH_POST,
-        products: res.data.data.productSearch.nodes
-      }))
-      .catch(console.error);
+    let result = await axios(postParam)
+    let products = result.data.data.productSearch.nodes
+    dispatch({ type: FETCH_POST, products: products })
   }
 }
 
-export function addNewItemInOrder (item) {
-  return function (dispatch) {
-    dispatch({
-      type: ADD_ITEM_IN_BASKET,
-      basket: item
-    })
+export const addNewItemInOrder = (item) => {
+  return (dispatch) => {
+    dispatch({ type: ADD_ITEM_IN_BASKET, basket: item })
   }
 }
 
-export function plusQuantity (indexBasket) {
-  return function (dispatch) {
-    dispatch({
-      type: PLUS_QUANTITY,
-      indexBasket: indexBasket
-    })
+export const plusQuantity = (indexBasket) => {
+  return (dispatch) => {
+    dispatch({ type: PLUS_QUANTITY, indexBasket: indexBasket })
   }
 }
-export function minusQuantity (indexBasket) {
-  return function (dispatch) {
-    dispatch({
-      type: MINUS_QUANTITY,
-      indexBasket: indexBasket
-    })
+export const minusQuantity = (indexBasket) => {
+  return (dispatch) => {
+    dispatch({ type: MINUS_QUANTITY, indexBasket: indexBasket })
   }
 }

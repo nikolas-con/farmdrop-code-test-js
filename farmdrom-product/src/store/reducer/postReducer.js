@@ -30,10 +30,8 @@ export function postReducer (state = initialState, actions) {
     case MINUS_QUANTITY:
         let newStateMinus = [...state.basket]
         if (newStateMinus[actions.indexBasket].quantity === 1) {
-          console.log('minus',actions.indexBasket)
-          console.log(newStateMinus)
+
           newStateMinus.splice(actions.indexBasket)
-          console.log(newStateMinus)
           return  {
             ...state,
             basket: newStateMinus

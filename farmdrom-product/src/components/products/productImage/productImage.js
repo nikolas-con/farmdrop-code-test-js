@@ -6,14 +6,9 @@ const ProductImage = (props) => {
   const tags = props.productTags
 
   const basket = props.basket
-  const productName = props.productName
-
-  let basketFilter =  basket.some(items => {
-    return items.name === productName
-  })
-  let basketIndex = basket.findIndex(items => {
-    return items.name === productName
-  })
+  
+  const basketFilter =  props.basketFilter
+  const basketIndex = props.basketIndex
 
   if (tags.length === 0 && !basketFilter ) {
     return (
