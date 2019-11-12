@@ -25,5 +25,4 @@ const TheProductGrind = (props) => {
   );
 }
 
-
 export default connect(mapStateToProps, mapDispatchToProps)(TheProductGrind);

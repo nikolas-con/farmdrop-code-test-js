@@ -16,14 +16,13 @@ describe('renders TheProductGrind', ()=>{
   it('ckeck <TheProdutcGrind/> if are data fetched', ()=>{
     const store = mockStore({products: mockProducts, basket: []})
     const warper = mount(<Provider store={store}><TheProductGrind/></Provider>)
-    // console.log(warper.debug())
     expect(warper.find(`[data-test='list-product-grind']`).children().length).toBe(23)
   })
 
   it('ckeck <TheProdutcGrind/> if are not data fetched', ()=>{
     const store = mockStore({products: [], basket: []})
     const warper = mount(<Provider store={store}><TheProductGrind/></Provider>)
-    // console.log(warper.debug())
+    
     expect(warper.find(`[data-test='list-product-grind']`).children().length).toBe(0)
   })
 })

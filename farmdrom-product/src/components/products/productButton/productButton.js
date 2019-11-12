@@ -9,7 +9,6 @@ const ProductButton = (props) => {
   const basketFilter = props.basketFilter
 
   if ( basketFilter === false) {
-    console.log('no in basket', basketIndex )
     return(
       <Fragment>
         <p className="rondom-box"/>
@@ -17,7 +16,6 @@ const ProductButton = (props) => {
       </Fragment>
     );
   } else if (basketFilter === true) {
-    console.log('in basket')
     return (
       <Fragment>
         <a className="rondom-box"/>

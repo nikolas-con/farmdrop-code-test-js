@@ -1,50 +1,7 @@
 import { ADD_ITEM_IN_BASKET, FETCH_POST, PLUS_QUANTITY, MINUS_QUANTITY } from './types'
+import { query, url } from './query'
 import axios from 'axios';
 
-const query = `
-{
-  productSearch(query: "Lamb Roasting Joints", first: 100) {
-    nodes {
-      name
-      producer {
-        name
-      }
-      measurement {
-        displayName
-      }
-      tags(type: "marketing") {
-        name
-      }
-      pricePerUnit
-      media {
-        type
-        url
-        position
-      }
-      variants {
-        pricePerUnit
-        measurement {
-          displayName
-        }
-        price {
-          pence
-        }
-        saleText
-        salePrice {
-          pence
-        }
-      }
-      saleText
-      price {
-        pence
-      }
-      salePrice {
-        pence
-      }
-    }
-  }
-}`;
-const url = "https://staging-graphql-gateway.farmdrop.com/graphql" 
 const postParam = {
   method: 'post',
   url: url,
@@ -53,7 +10,6 @@ const postParam = {
 }
 export const fetchPost = () =>{
   return async (dispatch) => {
-    console.log('1')
     let result = await axios(postParam)
     let products = result.data.data.productSearch.nodes
     dispatch({ type: FETCH_POST, products: products })

@@ -36,7 +36,6 @@ describe('renders <ProductPrice/>', ()=>{
   it('renders the produnt does not have variants and does not have sele', ()=>{
     const configPros = { handlePrice :handlePrice, selectedVariantsValeu: null, selectedDefault: true, saleText : mockProductWithOutSeles.saleText, salePrice : mockProductWithOutSeles.salePrice, productMeasurement : mockProductWithOutSeles.measurement.displayName, productPrice : mockProductWithOutSeles.price.pence, productPricePerUnit : mockProductWithOutSeles.pricePerUnit}
     const warper = mount(<ProductPrice {...configPros} index={indexNoSeles} variant={mockProductWithOutSeles.variants[0]} dispatch={() => {}}/>)
-    console.log(warper.debug())
     expect(warper.find(`[data-test='txt-price-per-unit-no-variant']`).text()).toBe(mockProductWithOutSeles.pricePerUnit)
     expect(warper.find(`[data-test='txt-price-default-no-variant']`).text()).toBe(`£${handlePrice(mockProductWithOutSeles.price.pence)}`)
   })  
