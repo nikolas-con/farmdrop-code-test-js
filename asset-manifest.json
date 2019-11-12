@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/farmdrop-code-test-js/static/css/main.0f2a9bda.chunk.css",
-    "main.js": "/farmdrop-code-test-js/static/js/main.535b4769.chunk.js",
-    "main.js.map": "/farmdrop-code-test-js/static/js/main.535b4769.chunk.js.map",
-    "runtime-main.js": "/farmdrop-code-test-js/static/js/runtime-main.5ad9e0dc.js",
-    "runtime-main.js.map": "/farmdrop-code-test-js/static/js/runtime-main.5ad9e0dc.js.map",
-    "static/js/2.4e5ab6e2.chunk.js": "/farmdrop-code-test-js/static/js/2.4e5ab6e2.chunk.js",
-    "static/js/2.4e5ab6e2.chunk.js.map": "/farmdrop-code-test-js/static/js/2.4e5ab6e2.chunk.js.map",
+    "main.css": "/farmdrop-code-test-js/static/css/main.0260416a.chunk.css",
+    "main.js": "/farmdrop-code-test-js/static/js/main.4003458a.chunk.js",
+    "main.js.map": "/farmdrop-code-test-js/static/js/main.4003458a.chunk.js.map",
+    "runtime-main.js": "/farmdrop-code-test-js/static/js/runtime-main.195fbb7d.js",
+    "runtime-main.js.map": "/farmdrop-code-test-js/static/js/runtime-main.195fbb7d.js.map",
+    "static/js/2.5ba182f1.chunk.js": "/farmdrop-code-test-js/static/js/2.5ba182f1.chunk.js",
+    "static/js/2.5ba182f1.chunk.js.map": "/farmdrop-code-test-js/static/js/2.5ba182f1.chunk.js.map",
     "index.html": "/farmdrop-code-test-js/index.html",
-    "precache-manifest.38301ba8f21518dd1e1e651930f0d4fd.js": "/farmdrop-code-test-js/precache-manifest.38301ba8f21518dd1e1e651930f0d4fd.js",
+    "precache-manifest.008eef5b03f5829bce26cd6484364a88.js": "/farmdrop-code-test-js/precache-manifest.008eef5b03f5829bce26cd6484364a88.js",
     "service-worker.js": "/farmdrop-code-test-js/service-worker.js",
-    "static/css/main.0f2a9bda.chunk.css.map": "/farmdrop-code-test-js/static/css/main.0f2a9bda.chunk.css.map",
+    "static/css/main.0260416a.chunk.css.map": "/farmdrop-code-test-js/static/css/main.0260416a.chunk.css.map",
     "static/media/basket.svg": "/farmdrop-code-test-js/static/media/basket.eb86888a.svg",
     "static/media/productVariants.scss": "/farmdrop-code-test-js/static/media/chevron.81f2db26.svg",
     "static/media/minus.svg": "/farmdrop-code-test-js/static/media/minus.41c7f618.svg",
     "static/media/plus.svg": "/farmdrop-code-test-js/static/media/plus.399c2817.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.5ad9e0dc.js",
-    "static/js/2.4e5ab6e2.chunk.js",
-    "static/css/main.0f2a9bda.chunk.css",
-    "static/js/main.535b4769.chunk.js"
+    "static/js/runtime-main.195fbb7d.js",
+    "static/js/2.5ba182f1.chunk.js",
+    "static/css/main.0260416a.chunk.css",
+    "static/js/main.4003458a.chunk.js"
   ]
 }
