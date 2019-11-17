@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
-import minusIcon from '../../../support/icons/minus.svg'
-import plusIcon from '../../../support/icons/plus.svg'
+import minusIcon from '../../../utility/icons/minus.svg'
+import plusIcon from '../../../utility/icons/plus.svg'
 import './productButton.scss'
 const ProductButton = (props) => {
   const basket = props.basket

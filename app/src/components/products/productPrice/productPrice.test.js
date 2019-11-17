@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import ProductPrice from './productPrice'
 
-import mockData from '../../../support/mock/mockData'
+import mockData from '../../../utility/mock/mockData'
 
 const indexSeles = mockData.data.productSearch.nodes.findIndex((mockData)=>{
   return mockData.name === 'Shetland X Romney Lamb Leg'

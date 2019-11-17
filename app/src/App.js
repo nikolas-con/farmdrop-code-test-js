@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import TheHeader from '../src/components/header/TheHeader'
 import TheProductGrind from '../src/components/productGrind/TheProductGrind'
 import { Provider } from 'react-redux'

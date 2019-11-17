@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import ProductImage from './productImage'
 
-import mockData from '../../../support/mock/mockData'
+import mockData from '../../../utility/mock/mockData'
 const mockProductNoTags = mockData.data.productSearch.nodes[1]
 const mockProductTags = mockData.data.productSearch.nodes[0]
 

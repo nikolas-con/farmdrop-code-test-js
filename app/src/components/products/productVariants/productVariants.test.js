@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import ProductVariants from './productVariants'
 
-import mockData from '../../../support/mock/mockData'
+import mockData from '../../../utility/mock/mockData'
 
 const mockProductWithOutVariants = mockData.data.productSearch.nodes[0]
 

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux'
-import BasketIcon from '../../support/icons/basket.svg'
-import LogoIcon from '../../support/icons/logo_farmdrop.png'
+import BasketIcon from '../../utility/icons/basket.svg'
+import LogoIcon from '../../utility/icons/logo_farmdrop.png'
 import './TheHeader.scss'
 
 const TheHeader = (props) => {

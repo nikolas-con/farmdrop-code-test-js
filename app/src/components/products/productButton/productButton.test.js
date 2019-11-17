@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import ProductButon from './productButton'
 
-import mockData from '../../../support/mock/mockData'
+import mockData from '../../../utility/mock/mockData'
 const mockProduct = mockData.data.productSearch.nodes[0]
 
 describe('renders <ProductButon/>', ()=>{

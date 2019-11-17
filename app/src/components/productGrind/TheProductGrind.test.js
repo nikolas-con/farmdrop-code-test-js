@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import TheProductGrind from './TheProductGrind'
 
 import configureStore from 'redux-mock-store'
-import mockData from '../../support/mock/mockData'
+import mockData from '../../utility/mock/mockData'
 import { Provider } from 'react-redux'
 
 import thunk from 'redux-thunk'

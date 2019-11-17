@@ -4,7 +4,7 @@ import ProductCard from './productCard'
 import { Provider } from 'react-redux'
 
 import configureStore from 'redux-mock-store'
-import mockData from '../../../support/mock/mockData'
+import mockData from '../../../utility/mock/mockData'
 import realStore from '../../../store/store'
 
 import thunk from 'redux-thunk'
