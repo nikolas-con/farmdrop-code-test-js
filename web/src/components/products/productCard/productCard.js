@@ -10,12 +10,12 @@ const ProductCard = (props) => {
 
   const [product, setProduct] = useState({...props.product, selectedVariantsValeu: null, selectedDefault: true})
 
-  let basketFilter =  props.basket.some(items => {return items.name === product.name})
+  let basketExist =  props.basket.some(items => {return items.name === product.name})
   let basketIndex = props.basket.findIndex(items => { return items.name === product.name })
+  let imagePositionIndex =  product.media.findIndex(image => { return image.position === 1 })
+  let imageTagsExist = product.tags.length > 0 ? true : false
   
   const handleSelectVariantsValue = (event) => {
-    console.log(event.target.value)
-    console.log(product.name)
     if (event.target.value !== product.measurement.displayName) setProduct({...product, selectedVariantsValeu: Number(event.target.value), selectedDefault: false})
     if (event.target.value === product.measurement.displayName) setProduct({...product, selectedVariantsValeu: null, selectedDefault: true})
   }
@@ -25,9 +25,9 @@ const ProductCard = (props) => {
     return pounds.toFixed(2)
   }
  
-  const configProductImage = { basketFilter: basketFilter, basketIndex: basketIndex, productMedias : product.media, productName:product.name, productTags:product.tags, basket:props.basket }
+  const configProductImage = { imageTagsExist: imageTagsExist, imagePositionIndex: imagePositionIndex, productMedias : product.media, productTags:product.tags }
   const configProductVariants = { handleSelectVariantsValue : handleSelectVariantsValue, selectedDefault : product.selectedDefault,saleText : product.saleText, salePrice : product.salePrice, selectedVariantsValeu : product.selectedVariantsValeu, variants : product.variants, handlePrice : handlePrice, productMeasurement : product.measurement.displayName, productPrice : product.price.pence, productPricePerUnit : product.pricePerUnit }
-  const configProductButon = { basketFilter: basketFilter, basketIndex: basketIndex, handleMinusQunttie : props.minusQuantity, handlePlusQunttie : props.plusQuantity, product :product, submitInOrder: props.addNewItemInOrder, basket : props.basket }
+  const configProductButon = { basketExist: basketExist, basketIndex: basketIndex, handleMinusQunttie : props.minusQuantity, handlePlusQunttie : props.plusQuantity, product :product, submitInOrder: props.addNewItemInOrder, basket : props.basket }
   
   return ( 
     <div data-test="product-card" className="product-card">
@@ -35,7 +35,7 @@ const ProductCard = (props) => {
       <p data-test="txt-product-name" className="product-name">{product.name}</p>
       <p data-test="txt-producer-name" className="product-producer-name">{product.producer.name}</p>
       <ProductVariants {...configProductVariants} />
-      <ProductButton {...configProductButon}/>
+      {/* <ProductButton {...configProductButon}/> */}
     </div> 
   );
 }

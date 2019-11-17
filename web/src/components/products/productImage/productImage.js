@@ -1,39 +1,12 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import './productImage.scss'
 
 const ProductImage = (props) => {
-  const medias = props.productMedias
-  const tags = props.productTags
-
-  const basket = props.basket
-  
-  const basketFilter =  props.basketFilter
-  const basketIndex = props.basketIndex
-
-  if (tags.length === 0 && !basketFilter ) {
-    return (
-      <Fragment>
-        {medias.map(media => 
-          media.position === 1 ? <img data-test="img-product" className="card-image" src={media.url} alt=""/> : ''
-        )}
-    </Fragment>
-    )
-  } else if (tags.length > 0 && !basketFilter) {
-    return (
-      <Fragment>
-        {medias.map(media => media.position === 1 ? <img data-test="img-product" className="card-image" src={media.url} alt=""/>  : '')}
-        {tags.map(tag => <p data-test="txt-product-tag" className="product-tags">{tag.name}</p>)}
-      </Fragment>
-    )   
-  } else if (basketFilter) {
-    return (
-      <Fragment>
-        {medias.map(media => media.position === 1 ? <img data-test="img-product" className="card-image" src={media.url} alt=""/>  : '')}
-        <p data-test="basket-image" className="basket-image"><span data-test="txt-bakset-quantity" style={{position: 'absolute', top: '40%', left: '32%'}}>{basket[basketIndex].quantity} in basket</span></p>
-      </Fragment>
-      )
-  }
-  return <div></div>
+  return (
+    <div>
+      <img data-test="img-product" className="card-image" src={props.productMedias[props.imagePositionIndex].url} alt=""/>
+      {props.imageTagsExist ? <p data-test="txt-product-tag" className="product-tags">{props.productTags[0].name}</p> : null }
+    </div>
+  )
 }
- 
 export default ProductImage;

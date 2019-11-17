@@ -20,7 +20,7 @@ const TheProductGrind = (props) => {
 
   return (
       <ul data-test="list-product-grind" className="product-grind">
-        {props.products.map(product => <ProductCard key={product.name} basket={props.basket} product={product}/>)}
+        {props.products.map((product, index) => <ProductCard key={index} basket={props.basket} product={product}/>)}
       </ul>
   );
 }
