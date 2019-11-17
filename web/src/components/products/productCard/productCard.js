@@ -27,9 +27,9 @@ const ProductCard = (props) => {
   }
  
   const configProductImage = { imageTagsExist: imageTagsExist, imagePositionIndex: imagePositionIndex, productMedias : product.media, productTags:product.tags }
-  const configProductImageOverlay = { basketExist: basketExist, basket: props.basket }
+  const configProductImageOverlay = { basketExist: basketExist, basketIndex: basketIndex, basket: props.basket }
   const configProductVariants = { handleSelectVariantsValue : handleSelectVariantsValue, selectedDefault : product.selectedDefault,saleText : product.saleText, salePrice : product.salePrice, selectedVariantsValeu : product.selectedVariantsValeu, variants : product.variants, handlePrice : handlePrice, productMeasurement : product.measurement.displayName, productPrice : product.price.pence, productPricePerUnit : product.pricePerUnit }
-  const configProductButon = { basketExist: basketExist, basketIndex: basketIndex, handleMinusQunttie : props.minusQuantity, handlePlusQunttie : props.plusQuantity, product :product, submitInOrder: props.addNewItemInOrder, basket : props.basket }
+  const configProductButon = { basketExist: basketExist, basketIndex: basketIndex, handleMinusQunttie : props.minusQuantity, handlePlusQunttie : props.plusQuantity, product :product, addNewItemInOrder: props.addNewItemInOrder, basket : props.basket }
   
   return ( 
     <div data-test="product-card" className="product-card">
@@ -38,7 +38,7 @@ const ProductCard = (props) => {
       <p data-test="txt-product-name" className="product-name">{product.name}</p>
       <p data-test="txt-producer-name" className="product-producer-name">{product.producer.name}</p>
       <ProductVariants {...configProductVariants} />
-      {/* <ProductButton {...configProductButon}/> */}
+      <ProductButton {...configProductButon}/>
     </div> 
   );
 }
