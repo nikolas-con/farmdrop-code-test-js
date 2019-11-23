@@ -8,16 +8,16 @@ const ProductButton = (props) => {
     return(
       <div>
         <p className="rondom-box"/>
-        <a data-test="btn-add-basket" className="card-button" onClick={() => props.addNewItemInOrder(props.product)}> Add </a>
+        <span data-test="btn-add-basket" className="card-button" onClick={() => props.addNewItemInOrder(props.product)}> Add </span>
       </div>
     );
   } else if (props.basketExist) {
     return (
       <div>
-        <a className="rondom-box"/>
-        <a data-test="btn-minus" className="box-minus" onClick={()=>props.handleMinusQunttie(props.basketIndex)}><img src={minusIcon}/></a>
+        <span className="rondom-box"/>
+        <span data-test="btn-minus" className="box-minus" onClick={()=>props.handleMinusQunttie(props.basketIndex)}><img src={minusIcon}/></span>
         <span data-test="txt-basket-quantity-product"  className="basket-quantity-product">{props.basket[props.basketIndex].quantity}</span>
-        <a data-test="btn-plus" className="box-plus" onClick={()=>props.handlePlusQunttie(props.basketIndex)}><img src={plusIcon}/></a>
+        <span data-test="btn-plus" className="box-plus" onClick={()=>props.handlePlusQunttie(props.basketIndex)}><img src={plusIcon}/></span>
       </div>
     )
   }
