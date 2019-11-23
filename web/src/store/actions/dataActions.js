@@ -1,17 +1,10 @@
 import { ADD_ITEM_IN_BASKET, FETCH_POST, PLUS_QUANTITY, MINUS_QUANTITY } from './types'
-import { query, url } from './query'
-import axios from 'axios';
+import { query, apolloClient } from './query'
 
-const postParam = {
-  method: 'post',
-  url: url,
-  headers: { "Content-Type": "application/json" },
-  data: { query }
-}
 export const fetchPost = () =>{
   return async (dispatch) => {
-    let result = await axios(postParam)
-    let products = result.data.data.productSearch.nodes
+    let result = await apolloClient.query({ query: query })
+    let products = result.data.productSearch.nodes
     dispatch({ type: FETCH_POST, products: products })
   }
 }
