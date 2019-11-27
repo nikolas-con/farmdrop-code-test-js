@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import ProductCard from '../products/productCard/productCard'
-import './TheProductGrind.scss'
+import './TheProductContainer.scss'
 import { connect } from 'react-redux'
 import { fetchPost} from '../../store/actions/dataActions'
 
@@ -12,7 +12,7 @@ const mapStateToProps = state => ({
   basket: state.basket
 })
 
-const TheProductGrind = (props) => {
+const TheProductContainer = (props) => {
 
   useEffect (()=>{
     props.fetchPost()
@@ -25,4 +25,4 @@ const TheProductGrind = (props) => {
   );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(TheProductGrind);
+export default connect(mapStateToProps, mapDispatchToProps)(TheProductContainer);
