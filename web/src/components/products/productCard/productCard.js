@@ -11,9 +11,9 @@ const ProductCard = (props) => {
 
   const [product, setProduct] = useState({...props.product, selectedVariantsValeu: null, selectedDefault: true})
 
-  let basketExist =  props.basket.some(items => {return items.name === product.name})
-  let basketIndex = props.basket.findIndex(items => { return items.name === product.name })
-  let imagePositionIndex =  product.media.findIndex(image => { return image.position === 1 })
+  let basketExist = props.basket.some(items => items.name === product.name)
+  let basketIndex = props.basket.findIndex(items => items.name === product.name)
+  let imagePositionIndex = product.media.findIndex(image => image.position === 1 )
   let imageTagsExist = product.tags.length > 0 ? true : false
   
   const handleSelectVariantsValue = (event) => {
@@ -31,7 +31,7 @@ const ProductCard = (props) => {
   const configProductVariants = { handleSelectVariantsValue : handleSelectVariantsValue, selectedDefault : product.selectedDefault,saleText : product.saleText, salePrice : product.salePrice, selectedVariantsValeu : product.selectedVariantsValeu, variants : product.variants, handlePrice : handlePrice, productMeasurement : product.measurement.displayName, productPrice : product.price.pence, productPricePerUnit : product.pricePerUnit }
   const configProductButon = { basketExist: basketExist, basketIndex: basketIndex, handleMinusQunttie : props.minusQuantity, handlePlusQunttie : props.plusQuantity, product :product, addNewItemInOrder: props.addNewItemInOrder, basket : props.basket }
   
-  return ( 
+  return (
     <div data-test="product-card" className="product-card">
       <ProductImage {...configProductImage}/>
       <ProductImageOverlay {...configProductImageOverlay}/>
@@ -39,15 +39,15 @@ const ProductCard = (props) => {
       <p data-test="txt-producer-name" className="product-producer-name">{product.producer.name}</p>
       <ProductVariants {...configProductVariants} />
       <ProductButton {...configProductButon}/>
-    </div> 
-  );
+    </div>
+    );
 }
-const mapDispatchToProps = dispatch => ({ 
-  addNewItemInOrder: (data) => dispatch(addNewItemInOrder({...data, quantity:1})),
-  plusQuantity: (index) => dispatch(plusQuantity(index)),
-  minusQuantity: (index) => dispatch(minusQuantity(index))
-})
-const mapStateToProps = state => ({
-  basket: state.basket
-})
+  const mapDispatchToProps = dispatch => ({
+    addNewItemInOrder: (data) => dispatch(addNewItemInOrder({...data, quantity:1})),
+    plusQuantity: (index) => dispatch(plusQuantity(index)),
+    minusQuantity: (index) => dispatch(minusQuantity(index))
+  })
+  const mapStateToProps = state => ({
+    basket: state.basket
+  })
 export default connect(mapStateToProps, mapDispatchToProps)(ProductCard);

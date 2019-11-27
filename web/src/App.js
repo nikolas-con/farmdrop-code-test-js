@@ -10,6 +10,6 @@ const App = () => {
       <TheHeader/>
       <TheProductGrind/>
     </Provider>
-  );
+  )
 }
 export default App;

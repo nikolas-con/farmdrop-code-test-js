@@ -18,5 +18,5 @@ describe('renders <ProductButon/>', ()=>{
     expect(warper.find(`[data-test='btn-minus']`).exists()).toBe(true)
     expect(warper.find(`[data-test='txt-basket-quantity-product']`).text()).toBe(String(basketMock[0].quantity))
     expect(warper.find(`[data-test='btn-plus']`).exists()).toBe(true)
-  }) 
+  })
 })

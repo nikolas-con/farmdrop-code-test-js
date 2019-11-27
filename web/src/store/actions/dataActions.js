@@ -1,5 +1,6 @@
 import { ADD_ITEM_IN_BASKET, FETCH_POST, PLUS_QUANTITY, MINUS_QUANTITY } from './types'
-import { query, apolloClient } from './query'
+import { query } from './query.js'
+import { apolloClient } from '../../utility/graphgl/graphgl'
 
 export const fetchPost = () =>{
   return async (dispatch) => {

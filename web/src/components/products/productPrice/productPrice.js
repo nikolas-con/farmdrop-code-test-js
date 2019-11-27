@@ -9,7 +9,7 @@ const ProductSales = (props) => {
           <p data-test="txt-price-per-unit" className="price-per-unit">{props.variant.pricePerUnit}</p>
           <p data-test="txt-price-default" className="price-default">£{props.handlePrice(props.variant.price.pence)}</p>
         </Fragment>
-      ); 
+      );
     } else if (props.variant.saleText !== null) {
       return (
         <Fragment>
@@ -27,7 +27,7 @@ const ProductSales = (props) => {
           <p data-test="txt-price-per-unit-no-variant" className="price-per-unit">{props.productPricePerUnit}</p>
           <p data-test="txt-price-default-no-variant" className="price-default">£{props.handlePrice(props.productPrice)}</p>
         </Fragment>
-      ) 
+      )
     } else if (props.saleText !== null && props.salePrice !== null) {
       return (
         <Fragment>
@@ -39,6 +39,6 @@ const ProductSales = (props) => {
       );
     }
   }
-  return (<div></div>)
+  return null
 }
 export default ProductSales

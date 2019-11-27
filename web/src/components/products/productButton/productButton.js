@@ -15,9 +15,9 @@ const ProductButton = (props) => {
     return (
       <div>
         <span className="rondom-box"/>
-        <span data-test="btn-minus" className="box-minus" onClick={()=>props.handleMinusQunttie(props.basketIndex)}><img src={minusIcon}/></span>
-        <span data-test="txt-basket-quantity-product"  className="basket-quantity-product">{props.basket[props.basketIndex].quantity}</span>
-        <span data-test="btn-plus" className="box-plus" onClick={()=>props.handlePlusQunttie(props.basketIndex)}><img src={plusIcon}/></span>
+        <span data-test="btn-minus" className="box-minus" onClick={()=>props.handleMinusQunttie(props.basketIndex)}><img src={minusIcon} alt=""/></span>
+        <span data-test="txt-basket-quantity-product" className="basket-quantity-product">{props.basket[props.basketIndex].quantity}</span>
+        <span data-test="btn-plus" className="box-plus" onClick={()=>props.handlePlusQunttie(props.basketIndex)}><img alt="" src={plusIcon}/></span>
       </div>
     )
   }

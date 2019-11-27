@@ -8,8 +8,7 @@ const TheHeader = (props) => {
   return (
     <Fragment>
       <div className="header-bar" >
-        <img></img>
-        <img data-test="img-logo" className="logo-icon" alt="logo" src={LogoIcon}/>
+        <img data-test="img-logo" className="logo-icon" alt="" src={LogoIcon}/>
       </div>
       <div style={{textAlign: 'end'}}>
         <div className="basket-icon-container">

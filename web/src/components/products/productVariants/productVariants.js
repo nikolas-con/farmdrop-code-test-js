@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import './productVariants.scss'
 import ProductPrice from '../productPrice/productPrice'
 
@@ -24,7 +24,7 @@ const ProductVariants = (props) => {
           {props.variants.map((variant, index) =>
             <ProductPrice {...configProductSeles} key={index} index={index} variant={variant}/>)}
         </ul>
-      </div>  
+      </div>
     );
 
   }

@@ -16,7 +16,6 @@ describe('renders <ProductImageOverlay/>', ()=>{
   it('renders the product in basket', ()=> {
   const configPros = { basketExist: true, basketIndex: 0, basket: [{...mockProduct, quantity: 1}] }
   const warper = mount(<ProductImageOverlay {...configPros}/>)
-  console.log(warper.debug())
-  expect(warper.find(`[data-test='txt-bakset-quantity']`).text()).toBe('1 in basket')  
+  expect(warper.find(`[data-test='txt-bakset-quantity']`).text()).toBe('1 in basket')
   })
 })

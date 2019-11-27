@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import ProductCard from '../products/productCard/productCard'
 import './TheProductGrind.scss'
 import { connect } from 'react-redux'
-import { fetchPost } from '../../store/actions/dataActions'
+import { fetchPost} from '../../store/actions/dataActions'
 
-const mapDispatchToProps = dispatch => ({ 
+const mapDispatchToProps = dispatch => ({
   fetchPost: () => dispatch(fetchPost())
 })
 const mapStateToProps = state => ({

@@ -1,10 +1,4 @@
-import ApolloClient, { gql } from 'apollo-boost'
-
-const apolloClient2 = new ApolloClient({
-  uri: 'https://staging-graphql-gateway.farmdrop.com/graphql',
-})
-
-export const apolloClient = apolloClient2
+import { gql } from 'apollo-boost';
 
 export const query = gql ` {
   productSearch(query: "Lamb Roasting Joints", first: 100) {
