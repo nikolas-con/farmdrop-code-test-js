@@ -1,4 +1,4 @@
-import { ADD_ITEM_IN_BASKET, FETCH_POST, PLUS_QUANTITY, MINUS_QUANTITY } from './types'
+import { ADD_ITEM_IN_BASKET, FETCH_POST, PLUS_QUANTITY, MINUS_QUANTITY, GET_USER_INFO, LOGOUT } from './types'
 import { query } from './query.js'
 import { apolloClient } from '../../utility/graphgl/graphgl'
 
@@ -24,5 +24,15 @@ export const plusQuantity = (indexBasket) => {
 export const minusQuantity = (indexBasket) => {
   return (dispatch) => {
     dispatch({ type: MINUS_QUANTITY, indexBasket: indexBasket })
+  }
+}
+export const getUserInfo = (user) => {
+  return (dispatch) => {
+    dispatch({ type: GET_USER_INFO, user: user })
+  }
+}
+export const logout = () => {
+  return (dispatch) => {
+    dispatch({ type: LOGOUT})
   }
 }

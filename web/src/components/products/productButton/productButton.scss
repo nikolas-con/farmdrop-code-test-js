@@ -22,7 +22,7 @@
   right: 0px;
   background-color: $grey;
 }
-a.box-plus:hover{
+span.box-plus:hover{
   cursor: pointer;
 }
 
@@ -38,7 +38,7 @@ a.box-plus:hover{
   right: 60px;
   background-color: $grey;
 }
-a.box-minus:hover{
+span.box-minus:hover{
   cursor: pointer;
 }
 
@@ -55,7 +55,7 @@ a.box-minus:hover{
   font-size: 15px;
   margin: 15px;
 }
-a.card-button:hover{
+span.card-button:hover{
   cursor: pointer;
   background: rgb(0, 158, 130);
 }

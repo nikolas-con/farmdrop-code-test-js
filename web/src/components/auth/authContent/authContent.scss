@@ -1,0 +1,43 @@
+.register-button {
+  height: 25px;
+  width: 100px;
+  background-color: #ffffff;
+  color: black;
+  text-decoration: none;
+  border-radius: 4px; 
+  right: 0px;
+  bottom: 5px;
+  position: absolute;
+  text-align: center;
+  margin-right: 5px;
+}
+.login-button {
+  height: 25px;
+  width: 100px;
+  background-color: #ffffff;
+  color: black;
+  border-radius: 4px;
+  right: 105px;
+  bottom: 0px;
+  position: absolute;
+  margin: 5px;
+  text-align: center;
+}
+.logout-button {
+  height: 25px;
+  width: 100px;
+  background-color: #ffffff;
+  color: black;
+  border-radius: 4px;
+  right: 5px;
+  bottom: 0px;
+  position: absolute;
+  margin: 5px;
+  text-align: center;
+}
+span.login-button:hover{
+  cursor: pointer;
+}
+span.logout-button:hover{
+  cursor: pointer;
+}
