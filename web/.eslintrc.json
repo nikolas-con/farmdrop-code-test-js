@@ -31,6 +31,7 @@
         "react/jsx-wrap-multilines": "error",
         "block-spacing": ["error", "always"],
         "no-mixed-spaces-and-tabs": ["error", "smart-tabs"],
-        "no-trailing-spaces": ["error", { "skipBlankLines": true, "ignoreComments": true }]
+        "no-trailing-spaces": ["error", { "skipBlankLines": true, "ignoreComments": true }],
+        "react-hooks/rules-of-hooks": "off"
     }
 }

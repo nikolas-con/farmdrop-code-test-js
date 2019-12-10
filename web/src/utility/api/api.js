@@ -31,3 +31,30 @@ export const getUserData = async () => {
   const user = result.data
   return user
 }
+export const updateUserProfile = async (user) => {
+  const formData = new FormData()
+  const data = JSON.stringify({first_name: 'nikolas',last_name: 'kakp'})
+  formData.append('json', data)
+  let post = {
+    method: 'post',
+    url: '/users/update',
+    data: formData,
+    headers: {
+      'Authorization': `Bearer ${localStorage.getItem("token")}`,
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
+  }
+
+  let result = await axios(post)
+}
+export const deleteUserProfile = async () => {
+  let post = {
+    method: 'delete',
+    url: '/users/delete',
+    headers: {
+      'Authorization': `Bearer ${localStorage.getItem("token")}`,
+      'Content-Type': 'application/json'
+    }
+  }
+  await axios(post)
+}

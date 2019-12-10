@@ -2,17 +2,17 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import LoginModal from '../loginModal/loginModal'
 import { connect } from 'react-redux'
-import './authContent.scss'
 import { logout } from '../../../store/actions/dataActions';
+import './authContent.scss'
+
 const AuthContent = (props) => {
   const [showLoginModal, setShowLoginModal] = useState(false)
-  const logout = () => {
-    props.logout()
-    localStorage.clear()
-  }
   if (props.isAuthenticated) {
     return (
-      <span onClick={logout} className="logout-button">Log out</span>
+      <div>
+        <Link to="/user-profile" className="login-button">User Profile</Link>
+        <span onClick={()=> props.logout()} className="logout-button">Log out</span>
+      </div>
     )
   } else {
     return (

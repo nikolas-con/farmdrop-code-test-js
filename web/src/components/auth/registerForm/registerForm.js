@@ -21,7 +21,7 @@ const RegisterForm = (props) => {
   const onHandleRegister = async (e) => {
     e.preventDefault();
     try {
-      register(user)
+      await register(user)
       let newUser = await getUserData()
       props.getUserInfo(newUser)
       history.push('/')

@@ -1,14 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import TheProductsScreen from '../screens/TheProductsScreen'
-import TheRegisterScreen from '../screens/TheRegisterScreen'
-
+import TheHeader from '../components/header/TheHeader'
+import TheProductContainer from '../components/productContainer/TheProductContainer'
+import RegisterForm from '../components/auth/registerForm/registerForm'
+import UserProfile from  '../components/user/userProfile'
 const Routing = () => {
   return (
     <Router>
+      <TheHeader/>
       <Switch>
-        <Route path="/" exact component={TheProductsScreen}/>
-        <Route path="/register" exact component={TheRegisterScreen}/>
+        <Route path="/" exact component={TheProductContainer}/>
+        <Route path="/register" exact component={RegisterForm}/>
+        <Route path="/user-profile" exact component={UserProfile}/>
       </Switch>
     </Router>
    );
