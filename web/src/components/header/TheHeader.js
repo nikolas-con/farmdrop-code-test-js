@@ -1,11 +1,15 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux'
 import BasketIcon from '../../utility/icons/basket.svg'
 import LogoIcon from '../../utility/icons/logo_farmdrop.png'
 import AuthContent from '../auth/authContent/authContent'
+import { getUserInfo } from '../../store/actions/dataActions'
 import './TheHeader.scss'
 
 const TheHeader = (props) => {
+  useEffect(() => {
+    props.getUserInfo()
+  },[props.getUserInfo])
   return (
     <Fragment>
       <div className="header-bar" >
@@ -24,5 +28,8 @@ const TheHeader = (props) => {
 const mapStateToProps = state => ({
   basket: state.basket
 })
+const mapDispatchToProps = dispatch => ({
+  getUserInfo: () => dispatch(getUserInfo())
+})
 
-export default connect(mapStateToProps, {})(TheHeader);
+export default connect(mapStateToProps, mapDispatchToProps)(TheHeader);

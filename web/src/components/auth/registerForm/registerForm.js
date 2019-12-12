@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import './registerFrom.scss'
 import { useHistory } from 'react-router-dom'
-import { getUserInfo } from '../../../store/actions/dataActions'
+import { userRegister } from '../../../store/actions/dataActions'
 import { connect } from 'react-redux'
-import { register, getUserData } from '../../../utility/api/api'
 
 const RegisterForm = (props) => {
   let history = useHistory()
@@ -21,9 +20,7 @@ const RegisterForm = (props) => {
   const onHandleRegister = async (e) => {
     e.preventDefault();
     try {
-      await register(user)
-      let newUser = await getUserData()
-      props.getUserInfo(newUser)
+      await props.userRegister(user)
       history.push('/')
     } catch (error) {
       alert('Authentication problem')
@@ -43,6 +40,6 @@ const RegisterForm = (props) => {
    );
 }
 const mapDispatchToProps = dispatch => ({
-  getUserInfo: (user) => dispatch(getUserInfo(user))
+  userRegister: (user) => dispatch(userRegister(user))
 })
 export default connect(null,mapDispatchToProps)(RegisterForm);

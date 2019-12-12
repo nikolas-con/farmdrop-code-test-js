@@ -7,7 +7,7 @@ export const login = async (info) => {
     data: info
   }
   let result = await axios(post)
-  localStorage.setItem("token", result.data.jwt)
+  return result.data
 }
 export const register = async (user) => {
   let postCreadUser = {
@@ -16,16 +16,20 @@ export const register = async (user) => {
     data: user
   }
   let resultCreateUser = await axios(postCreadUser)
-  localStorage.setItem("token", resultCreateUser.data.jwt)
+  return resultCreateUser.data
 }
 export const getUserData = async () => {
   const token = localStorage.getItem("token")
-  const tokenSplit = token.split('.')
-  const decodeToken = atob(tokenSplit[1])
-  const id = JSON.parse(decodeToken).id
+  if (token === null) {
+    return null
+  }
   let post = {
     method: 'get',
-    url: `/users/${id}`
+    url: '/users/profile',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    }
   }
   let result = await axios(post)
   const user = result.data
@@ -33,8 +37,10 @@ export const getUserData = async () => {
 }
 export const updateUserProfile = async (user) => {
   const formData = new FormData()
-  const data = JSON.stringify({first_name: 'nikolas',last_name: 'kakp'})
+  const data = JSON.stringify({first_name: user.first_name,last_name: user.last_name})
+  console.log(data)
   formData.append('json', data)
+  console.log(formData.keys())
   let post = {
     method: 'post',
     url: '/users/update',
@@ -44,8 +50,9 @@ export const updateUserProfile = async (user) => {
       'Content-Type': 'application/x-www-form-urlencoded'
     }
   }
-
   let result = await axios(post)
+  console.log(result.data)
+  return result.data
 }
 export const deleteUserProfile = async () => {
   let post = {

@@ -35,17 +35,25 @@ export const postReducer = (state = initialState, actions) => {
       break;
     }
     case GET_USER_INFO: {
-      return {
-        ...state,
-        isAuthenticated: true,
-        user: actions.user
+      if (actions.user !== null) {
+        let userInfon = {...actions.user}
+        delete userInfon.__v
+        delete userInfon._id
+        return {
+          ...state,
+          isAuthenticated: true,
+          user: { ...state.user, ...userInfon }
+        }
       }
+      return { ...state }
+      
     }
     case LOGOUT: {
+      localStorage.clear()
       return {
         ...state,
         isAuthenticated: false,
-        user: {}
+        user: {jwt}
       }
     }
     default:

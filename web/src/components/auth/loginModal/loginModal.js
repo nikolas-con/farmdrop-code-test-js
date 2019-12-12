@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './loginModal.scss'
-import { login, getUserData } from '../../../utility/api/api'
 import { connect } from 'react-redux'
-import { getUserInfo } from '../../../store/actions/dataActions'
+import { userLogin } from '../../../store/actions/dataActions'
+
 const LoginModal = (props) => {
   const [ loginInfo , setLoginInfo ] = useState({email: null, password: null})
   const onChangeInput = e => {
@@ -11,13 +11,10 @@ const LoginModal = (props) => {
   const onHandleLogin = async e => {
     e.preventDefault();
     try{
-      await login(loginInfo)
-      let newUser = await getUserData()
-      console.log(newUser)
-      props.getUserInfo(newUser)
+      await props.userLogin(loginInfo)
+      console.log('aaa')
     }catch (error) {
       alert('Authentication problem')
-      console.log(error)
     }
     props.setShowLoginModal(false)
   }
@@ -33,7 +30,6 @@ const LoginModal = (props) => {
   );
 }
 const mapDispatchToProps = dispatch => ({
-  getUserInfo: (newUser) => dispatch(getUserInfo(newUser))
-  
+  userLogin: (loginInfo) => dispatch(userLogin(loginInfo))
 })
 export default connect(null, mapDispatchToProps)(LoginModal);
