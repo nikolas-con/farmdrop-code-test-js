@@ -4,15 +4,16 @@ import TheHeader from '../components/header/TheHeader'
 import TheProductContainer from '../components/productContainer/TheProductContainer'
 import RegisterForm from '../components/auth/registerForm/registerForm'
 import UserProfile from  '../components/user/userProfile'
-import ProtectedRoute from '../components/protecteRoute/protectedRoute'
+import ProtectedRouteUserProfile from '../components/protecteRoute/protectedRouteUserProfile'
+import ProtectedRouteRegister from '../components/protecteRoute/protectedRouteRegister'
 const Routing = () => {
   return (
     <Router>
       <TheHeader/>
       <Switch>
         <Route path="/" exact component={TheProductContainer}/>
-        <Route path="/register" exact component={RegisterForm}/>
-        <ProtectedRoute exact path="/user-profile" component={UserProfile}/>
+        <ProtectedRouteRegister path="/register" exact component={RegisterForm}/>
+        <ProtectedRouteUserProfile exact path="/user-profile" component={UserProfile}/>
       </Switch>
     </Router>
    );
