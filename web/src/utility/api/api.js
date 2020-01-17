@@ -38,9 +38,7 @@ export const getUserData = async () => {
 export const updateUserProfile = async (user) => {
   const formData = new FormData()
   const data = JSON.stringify({first_name: user.first_name,last_name: user.last_name})
-  console.log(data)
   formData.append('json', data)
-  console.log(formData.keys())
   let post = {
     method: 'post',
     url: '/users/update',
@@ -51,7 +49,6 @@ export const updateUserProfile = async (user) => {
     }
   }
   let result = await axios(post)
-  console.log(result.data)
   return result.data
 }
 export const deleteUserProfile = async () => {

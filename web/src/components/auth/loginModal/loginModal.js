@@ -12,7 +12,6 @@ const LoginModal = (props) => {
     e.preventDefault();
     try{
       await props.userLogin(loginInfo)
-      console.log('aaa')
     }catch (error) {
       alert('Authentication problem')
     }

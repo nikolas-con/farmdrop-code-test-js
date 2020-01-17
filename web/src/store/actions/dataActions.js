@@ -34,7 +34,6 @@ export const getUserInfo = () => {
 }
 export const userLogin = (loginInfo) => {
   return async (dispatch) => {
-    console.log('test')
     let result = await login(loginInfo)
     localStorage.setItem("token", result.jwt)
     let user = await getUserData()
